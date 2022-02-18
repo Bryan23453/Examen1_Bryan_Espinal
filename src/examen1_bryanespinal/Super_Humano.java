@@ -15,7 +15,7 @@ public class Super_Humano extends persona {
     
     }
 
-    public Super_Humano(String Superpoder, String nombre, String poder, String debilidad, String heroe_vilano, int fuerza, int habilidad_mental, int habilidad_ficica, boolean tiene_escuadron) {
+    public Super_Humano(String Superpoder, String nombre, String poder, String debilidad, boolean heroe_vilano, int fuerza, int habilidad_mental, int habilidad_ficica, boolean tiene_escuadron) {
         super(nombre, poder, debilidad, heroe_vilano, fuerza, habilidad_mental, habilidad_ficica, tiene_escuadron);
         this.Superpoder = Superpoder;
     }

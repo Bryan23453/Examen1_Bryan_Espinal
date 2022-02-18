@@ -13,13 +13,13 @@ public abstract class persona {
     String nombre;
     String poder;
     String debilidad;
-    String heroe_vilano;
+    boolean heroe_vilano;
     int fuerza;
     int habilidad_mental;
     int habilidad_ficica;
     boolean tiene_escuadron;
 
-    public persona(String nombre, String poder, String debilidad, String heroe_vilano, int fuerza, int habilidad_mental, int habilidad_ficica, boolean tiene_escuadron) {
+    public persona(String nombre, String poder, String debilidad, boolean heroe_vilano, int fuerza, int habilidad_mental, int habilidad_ficica, boolean tiene_escuadron) {
         this.nombre = nombre;
         this.poder = poder;
         this.debilidad = debilidad;
@@ -57,11 +57,11 @@ public abstract class persona {
         this.debilidad = debilidad;
     }
 
-    public String getHeroe_vilano() {
+    public boolean getHeroe_vilano() {
         return heroe_vilano;
     }
 
-    public void setHeroe_vilano(String heroe_vilano) {
+    public void setHeroe_vilano(boolean heroe_vilano) {
         this.heroe_vilano = heroe_vilano;
     }
 
@@ -99,7 +99,7 @@ public abstract class persona {
 
     @Override
     public String toString() {
-        return "persona{" + "nombre=" + nombre + ", poder=" + poder + ", debilidad=" + debilidad + ", heroe_vilano=" + heroe_vilano + ", fuerza=" + fuerza + ", habilidad_mental=" + habilidad_mental + ", habilidad_ficica=" + habilidad_ficica + ", tiene_escuadron=" + tiene_escuadron + '}';
+        return "persona{" + "nombre=" + nombre + ", poder=" + poder + ", debilidad=" + debilidad + ", fuerza=" + fuerza + ", habilidad mental=" + habilidad_mental + ", habilidad ficica=" + habilidad_ficica + ", tiene escuadron=" + tiene_escuadron + '}';
     }
 
     

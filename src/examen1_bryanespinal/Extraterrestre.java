@@ -9,10 +9,13 @@ package examen1_bryanespinal;
  *
  * @author bryan
  */
-public class Extraterrestre  {
+public class Extraterrestre extends persona{
 
     public Extraterrestre() {
     }
+
+    @Override
+    public void final_chance() {}
     
     
 }

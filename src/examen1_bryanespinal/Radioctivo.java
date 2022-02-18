@@ -16,7 +16,7 @@ public class Radioctivo extends persona {
     public Radioctivo() {
     }
 
-    public Radioctivo(int edad, String tipo_accidente, String nombre, String poder, String debilidad, String heroe_vilano, int fuerza, int habilidad_mental, int habilidad_ficica, boolean tiene_escuadron) {
+    public Radioctivo(int edad, String tipo_accidente, String nombre, String poder, String debilidad, boolean heroe_vilano, int fuerza, int habilidad_mental, int habilidad_ficica, boolean tiene_escuadron) {
         super(nombre, poder, debilidad, heroe_vilano, fuerza, habilidad_mental, habilidad_ficica, tiene_escuadron);
         this.edad = edad;
         this.tipo_accidente = tipo_accidente;
@@ -40,6 +40,11 @@ public class Radioctivo extends persona {
     
     public  void final_chance(){
     
+    }
+
+    @Override
+    public String toString() {
+        return "Radioctivo{" + "edad=" + edad + ", tipo_accidente=" + tipo_accidente + '}';
     }
     
 }

@@ -18,6 +18,8 @@ public class Deidad extends Extraterrestre {
         this.religion = religion;
     }
 
+    
+
     public boolean isCreyentes() {
         return creyentes;
     }
