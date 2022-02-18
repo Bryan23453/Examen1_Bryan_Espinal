@@ -11,6 +11,19 @@ package examen1_bryanespinal;
  */
 public class Alien extends Extraterrestre {
     String planeta;
+
+    public Alien(String planeta) {
+        this.planeta = planeta;
+    }
+
+    public String getPlaneta() {
+        return planeta;
+    }
+
+    public void setPlaneta(String planeta) {
+        this.planeta = planeta;
+    }
+    
     public void final_chance(){
     
     }

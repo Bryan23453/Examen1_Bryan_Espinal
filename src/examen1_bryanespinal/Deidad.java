@@ -12,6 +12,28 @@ package examen1_bryanespinal;
 public class Deidad extends Extraterrestre {
     boolean creyentes;
     String religion;
+
+    public Deidad(boolean creyentes, String religion) {
+        this.creyentes = creyentes;
+        this.religion = religion;
+    }
+
+    public boolean isCreyentes() {
+        return creyentes;
+    }
+
+    public void setCreyentes(boolean creyentes) {
+        this.creyentes = creyentes;
+    }
+
+    public String getReligion() {
+        return religion;
+    }
+
+    public void setReligion(String religion) {
+        this.religion = religion;
+    }
+    
     public void final_chance(){
     
     }

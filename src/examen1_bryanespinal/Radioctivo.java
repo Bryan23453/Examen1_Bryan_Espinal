@@ -12,6 +12,32 @@ package examen1_bryanespinal;
 public class Radioctivo extends persona {
     int edad;
     String tipo_accidente;
+
+    public Radioctivo() {
+    }
+
+    public Radioctivo(int edad, String tipo_accidente, String nombre, String poder, String debilidad, String heroe_vilano, int fuerza, int habilidad_mental, int habilidad_ficica, boolean tiene_escuadron) {
+        super(nombre, poder, debilidad, heroe_vilano, fuerza, habilidad_mental, habilidad_ficica, tiene_escuadron);
+        this.edad = edad;
+        this.tipo_accidente = tipo_accidente;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public String getTipo_accidente() {
+        return tipo_accidente;
+    }
+
+    public void setTipo_accidente(String tipo_accidente) {
+        this.tipo_accidente = tipo_accidente;
+    }
+    
     public  void final_chance(){
     
     }

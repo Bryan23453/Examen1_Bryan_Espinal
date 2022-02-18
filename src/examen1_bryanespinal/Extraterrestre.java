@@ -10,6 +10,9 @@ package examen1_bryanespinal;
  * @author bryan
  */
 public class Extraterrestre  {
+
+    public Extraterrestre() {
+    }
     
     
 }
