@@ -288,8 +288,8 @@ public class Examen1_BryanESPINAL {
                                         System.out.println("no existe ese escuadron");
                                         break;
                                     }
-                                    escuadrones escua1=escuadrones.get(selec);
-                                    escuadrones escua2=escuadrones.get(selec2);
+                                    escuadrones escua1=escuadrones.get(selec-1);
+                                    escuadrones escua2=escuadrones.get(selec2-1);
                                     Random r=new Random();
                                     int e=1+r.nextInt(3);
                                     switch (e){
