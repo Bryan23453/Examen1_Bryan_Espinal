@@ -30,8 +30,8 @@ public class universo {
         return escua;
     }
 
-    public void setEscua(ArrayList<escuadrones> escua) {
-        this.escua = escua;
+    public void setEscua(escuadrones escua) {
+        this.escua .add(escua);
     }
 
     @Override

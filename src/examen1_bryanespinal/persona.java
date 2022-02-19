@@ -99,7 +99,11 @@ public abstract class persona {
 
     @Override
     public String toString() {
-        return "persona{" + "nombre=" + nombre + ", poder=" + poder + ", debilidad=" + debilidad + ", fuerza=" + fuerza + ", habilidad mental=" + habilidad_mental + ", habilidad ficica=" + habilidad_ficica + ", tiene escuadron=" + tiene_escuadron + '}';
+        if (heroe_vilano) {
+            return "persona " + "nombre=" + nombre + ", poder: " + poder ;
+        }else{
+            return "persona " + "nombre=" + nombre + ", debilidad=" + debilidad ;
+        }
     }
 
     

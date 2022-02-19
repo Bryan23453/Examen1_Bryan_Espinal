@@ -31,5 +31,10 @@ public class mutante extends persona{
     public void setFactores(ArrayList<String> factores) {
         this.factores = factores;
     }
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
     
 }

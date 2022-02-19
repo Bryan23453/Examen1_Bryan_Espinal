@@ -44,7 +44,7 @@ public class Radioctivo extends persona {
 
     @Override
     public String toString() {
-        return "Radioctivo{" + "edad=" + edad + ", tipo_accidente=" + tipo_accidente + '}';
+        return super.toString();
     }
     
 }

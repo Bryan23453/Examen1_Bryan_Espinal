@@ -32,5 +32,10 @@ public class Super_Humano extends persona {
     public void setSuperpoder(String Superpoder) {
         this.Superpoder = Superpoder;
     }
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
     
 }

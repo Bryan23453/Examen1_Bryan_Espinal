@@ -74,13 +74,13 @@ public class escuadrones {
         return miebros;
     }
 
-    public void setMiebros(ArrayList<persona> miebros) {
-        this.miebros = miebros;
+    public void setMiebros(persona miebros) {
+        this.miebros.add(miebros) ;
     }
 
     @Override
     public String toString() {
-        return "escuadrones " + "Nombre: " + Nombre + ", Lugar=" + Lugar + ", base=" + base + ", lider=" + lider + ", heroe_villa=" + heroe_villa + ", miebros=" + miebros + '}';
+        return "escuadrones " + "Nombre: " + Nombre + ", Lugar=" + Lugar ;
     }
         
 }

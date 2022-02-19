@@ -11,11 +11,13 @@ package examen1_bryanespinal;
  */
 public class Extraterrestre extends persona{
 
-    public Extraterrestre() {
+    public Extraterrestre(String nombre, String poder, String debilidad, boolean heroe_vilano, int fuerza, int habilidad_mental, int habilidad_ficica, boolean tiene_escuadron) {
+        super(nombre, poder, debilidad, heroe_vilano, fuerza, habilidad_mental, habilidad_ficica, tiene_escuadron);
     }
 
+
     @Override
-    public void final_chance() {}
+    public  void final_chance(){}
     
     
 }

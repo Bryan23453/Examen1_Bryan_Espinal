@@ -20,5 +20,10 @@ public class persona_normal extends persona {
 
     public persona_normal() {
     }
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
     
 }
