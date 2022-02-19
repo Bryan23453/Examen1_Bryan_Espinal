@@ -471,6 +471,7 @@ public class Examen1_BryanESPINAL {
                                 case 5:{
                                     System.out.println("Ingrese planeta");
                                     String planeta=lea.nextLine();
+                                    planeta=lea.nextLine();
                                         if (heroe_vilano) {
                                             heroes.add (new Alien(planeta,nombre, poder, debilidad, heroe_vilano, fuerza, habilidad_mental, habilidad_ficica, tiene_escuadron));
                                         }else{
@@ -562,7 +563,7 @@ public class Examen1_BryanESPINAL {
                                     a.add(heroes.toString());
                                 }
                                 for (persona per : Villanos) {
-                                    a.add(heroes.toString());
+                                    a.add(Villanos.toString());
                                 }
                                 Collections.sort(a);
                                 for (int j = 0; j < a.size(); j++) {
