@@ -99,7 +99,7 @@ public abstract class persona {
 
     @Override
     public String toString() {
-        if (heroe_vilano) {
+        if (heroe_vilano==true) {
             return "persona " + "nombre=" + nombre + ", poder: " + poder ;
         }else{
             return "persona " + "nombre=" + nombre + ", debilidad=" + debilidad ;

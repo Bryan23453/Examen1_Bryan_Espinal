@@ -7,6 +7,7 @@ package examen1_bryanespinal;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -25,7 +26,7 @@ public class Examen1_BryanESPINAL {
         universo.add(new universo("UHC"));
         heroes.add (new persona_normal("PACO","VOLAR","Plutonio",true,50,20,60,false));
         Villanos.add (new persona_normal("pancho","caminar rapido","Plutonio",false,45,25,45,false));
-        escuadrones.add(new escuadrones("escuadron de la justicia","usa","ontariojr",true));
+        escuadrones.add(new escuadrones("escuadron de la justicia","usa","ontariojr",true,new persona_normal("cancho","escribir rapido","Plutonio",false,15,50,40,false)));
         universo.get(0).setEscua(escuadrones.get(0));
         boolean cont=true;
         while  (cont){
@@ -156,15 +157,39 @@ public class Examen1_BryanESPINAL {
                                 switch(opcs){
                                     case 1:{
                                         hero_villa=false;
+                                        i=0;
+                                        for (persona per : Villanos) {
+                                            i++;
+                                            System.out.println(i+" "+Villanos);
+                                        }
+                                        System.out.print("Ingrese Numero De la persona que sera el lider del escuadron: ");
+                                        int elim=lea.nextInt();
+                                        if (elim<Villanos.size()||elim>0) {
+                                            escuadrones.add(new escuadrones(nom,Lugar,base,hero_villa,Villanos.get(elim-1)));
+                                            universo.get(universoss-1).setEscua(escuadrones.get(escuadrones.size()-1));
+                                            Villanos.remove(Villanos.get(elim-1));
+                                        }else{
+                                            System.out.println("no existe ese villano");
+                                        }
                                         
-                                        escuadrones.add(new escuadrones(nom,Lugar,base,hero_villa));
-                                        universo.get(universoss-1).setEscua(escuadrones.get(escuadrones.size()));
                                     }
                                     break;
                                     case 2:{
+                                        i=0;
+                                        for (persona per : heroes) {
+                                            i++;
+                                            System.out.println(i+" "+heroes);
+                                        }
                                         hero_villa=true;
-                                        escuadrones.add(new escuadrones(nom,Lugar,base,hero_villa));
-                                        universo.get(universoss-1).setEscua(escuadrones.get(escuadrones.size()));
+                                         System.out.print("Ingrese Numero De la persona que sera el lider del escuadron: ");
+                                        int elim=lea.nextInt();
+                                        if (elim<heroes.size()||elim>0) {
+                                            escuadrones.add(new escuadrones(nom,Lugar,base,hero_villa,heroes.get(elim-1)));
+                                            universo.get(universoss-1).setEscua(escuadrones.get(escuadrones.size()-1));
+                                            heroes.remove(heroes.get(elim-1));
+                                        }else{
+                                            System.out.println("no existe ese Heroe");
+                                        }
                                     }
                                     break;
                                     default:{
@@ -224,6 +249,7 @@ public class Examen1_BryanESPINAL {
                                     System.out.println("Selecione heroe a agregar");
                                     int selec=lea.nextInt();
                                     escua.setMiebros(heroes.get(selec-1));
+                                    heroes.remove(heroes.get(selec-1));
                                 }else{
                                     for (persona per : Villanos) {
                                         i++;
@@ -232,31 +258,87 @@ public class Examen1_BryanESPINAL {
                                     System.out.println("Selecione villano a agregar");
                                     int selec=lea.nextInt();
                                     escua.setMiebros(Villanos.get(selec-1));
+                                    Villanos.remove(Villanos.get(selec-1));
                                 }
-                                
-                            
-                            
-                            
                             }
                             break;
                             case 6:{
                             int i=0;
-                                System.out.println("Ingrese A el 1 escuadron que peleara");
-                                for (escuadrones escua : escuadrones) {
-                                    i++;
-                                    System.out.println(i+" "+escua);
-                                }
-                                System.out.print("Seleccione escuadron : ");
-                                int selec=lea.nextInt();
-                                
-                                System.out.println("Ingrese A el 2 escuadron que peleara");
-                                for (escuadrones escua : escuadrones) {
-                                    i++;
-                                    System.out.println(i+" "+escua);
-                                }
-                                System.out.print("Seleccione escuadron: ");
-                                int selec2=lea.nextInt();
-                                
+                                if (escuadrones.size()>1) {
+                                    System.out.println("Ingrese A el 1 escuadron que peleara");
+                                    for (escuadrones escua : escuadrones) {
+                                        i++;
+                                        System.out.println(i+" "+escua);
+                                    }
+                                    System.out.print("Seleccione escuadron : ");
+                                    int selec=lea.nextInt();
+                                    if (selec>i) {
+                                        System.out.println("no existe ese escuadron");
+                                        break;
+                                    }
+                                    i=0;
+                                    System.out.println("Ingrese A el 2 escuadron que peleara");
+                                    for (escuadrones escua : escuadrones) {
+                                        i++;
+                                        System.out.println(i+" "+escua);
+                                    }
+                                    System.out.print("Seleccione escuadron: ");
+                                    int selec2=lea.nextInt();
+                                    if (selec2>i) {
+                                        System.out.println("no existe ese escuadron");
+                                        break;
+                                    }
+                                    escuadrones escua1=escuadrones.get(selec);
+                                    escuadrones escua2=escuadrones.get(selec2);
+                                    Random r=new Random();
+                                    int e=1+r.nextInt(3);
+                                    switch (e){
+                                        case 1:{
+                                            if (escua1.getLider().getFuerza()<escua2.getLider().getFuerza()) {
+                                                System.out.println("a perdido el equipo 1");
+                                                escuadrones.remove(escuadrones.get(selec));
+                                            }else{
+                                                if (escua1.getLider().getFuerza()>escua2.getLider().getFuerza()) {
+                                                    System.out.println("a perdido el equipo 2");
+                                                    escuadrones.remove(escuadrones.get(selec2));
+                                                }else{
+                                                    System.out.println("empate");
+                                                }
+                                            }
+                                        }
+                                        break;
+                                        case 2:{
+                                            if (escua1.getLider().getHabilidad_ficica()<escua2.getLider().getHabilidad_ficica()) {
+                                                System.out.println("a perdido el equipo 1");
+                                                escuadrones.remove(escuadrones.get(selec));
+                                            }else{
+                                                if (escua1.getLider().getHabilidad_ficica()>escua2.getLider().getHabilidad_ficica()) {
+                                                    System.out.println("a perdido el equipo 2");
+                                                    escuadrones.remove(escuadrones.get(selec2));
+                                                }else{
+                                                    System.out.println("empate");
+                                                }
+                                            }
+                                        }
+                                        break;
+                                        case 3:{
+                                            if (escua1.getLider().getHabilidad_mental()<escua2.getLider().getHabilidad_mental()) {
+                                                System.out.println("a perdido el equipo 1");
+                                                escuadrones.remove(escuadrones.get(selec));
+                                            }else{
+                                                if (escua1.getLider().getHabilidad_mental()>escua2.getLider().getHabilidad_mental()) {
+                                                    System.out.println("a perdido el equipo 2");
+                                                    escuadrones.remove(escuadrones.get(selec2));
+                                                }else{
+                                                    System.out.println("empate");
+                                                }
+                                            }
+                                        }
+                                        break;
+                                    }
+                                }else{
+                                    System.out.println("no hay suficientes escuadrones para una simulacion");
+                                } 
                             }
                             break;
                         }

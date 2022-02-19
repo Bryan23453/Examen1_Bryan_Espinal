@@ -22,7 +22,7 @@ public class escuadrones {
     public escuadrones() {
     }
 
-    public escuadrones(String Nombre, String Lugar, String base, boolean heroe_villa) {
+    public escuadrones(String Nombre, String Lugar, String base, boolean heroe_villa,persona lider) {
         this.Nombre = Nombre;
         this.Lugar = Lugar;
         this.base = base;
